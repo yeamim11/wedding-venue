@@ -5,6 +5,7 @@ import Hero from './component/Pages/Hero'
 import Location from './component/Pages/Location'
 import Services from './component/Pages/Services'
 import Portfolio from './component/Pages/Portfolio'
+import Contact from './component/Pages/Contact'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Location/>
       <Services/>
       <Portfolio/>
+      <Contact/>
     </div>
   )
 }

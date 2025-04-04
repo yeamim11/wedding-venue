@@ -64,11 +64,11 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className='container mx-auto px-4 md:px-16 py-16'>
+    <div className=' py-16 md:px-52 md:py-28 p-4 '>
       <p className='text-start text-[#90998a] text-xl font-semibold md:text-left'>Our Portfolios</p>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols- gap-8 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
         {cards.map((card, index) => (
           <div 
             key={index} 
