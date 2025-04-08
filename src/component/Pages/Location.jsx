@@ -98,7 +98,7 @@ const Location = () => {
     ]
 
     return (
-        <div className='md:px-52 md:py-28 p-4'>
+        <div className='md:px-52 md:py-20 p-4'>
             <div className="text-center mb-6">
                 <h2 className='text-[#56614f] text-[32px] font-bold leading-10'>Location</h2>
                 <p className='text-[#b7c1b2] text-base'>that you will remember forever</p>
