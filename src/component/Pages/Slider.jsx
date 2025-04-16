@@ -1,115 +1,93 @@
-// import React from 'react'
-// import img from '../../assets/slider.png'
-// const Slider = () => {
-//   return (
-//     <div className=' py-16 md:px-52 md:py-10 px-4'>
-//        <div className="">
-//         <h2 className=' text-start text-[#90998a] text-xl font-semibold leading-7' >Featured venues</h2>
-//        </div>
-//        {/* =========================== */}
-//        <div className="slider grid grid-cols-1 md:grid-cols-2 pt-10">
-//         <div className="img">
-//           <img src={img} alt="img" />
-//         </div>
-//         <div className="slider section">
-          
-//         </div>
-//        </div>
-//     </div>
-//   )
-// }
 
-// export default Slider
-
-
-
-
-
-
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import img from "../../assets/slider.png";
+import React, { useState } from 'react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import img from '../../assets/slider.png'; // Replace with your image or make it dynamic
 
 const venues = [
   {
-    id: 1,
-    name: "Villa Balbianello",
-    location: "Lake Como",
-    description:
-      "The whole complex consists of two residential buildings, a church, and a portico (known as Loggia Durini) that can host weddings and events in a truly unique setting. But the special feature of Villa Balbianello is above all the vast garden that surrounds the dwellings, with magnificent holm oaks pruned into an umbrella shape so as to offer a splendid view of Lake Como from inside the...",
+    name: 'Villa Balbianello',
+    location: 'Lake Como',
+    description: `The whole complex consists of two residential buildings, a church, and a portico (known as Loggia Durini) that can host weddings and events in a truly unique setting.
+But the special feature of Villa Balbianello is above all the vast garden that surrounds the dwellings, with magnificent holm oaks pruned into an umbrella shape so as to offer a splendid view of Lake Como from   inside the...`,
   },
-  // Add more venues here if needed
+  {
+    name: 'Balbianello',
+    location: 'Jakarta',
+    description: 'A luxurious retreat offering elegance and timeless charm with lush gardens and panoramic views...',
+  },
+  {
+    name: 'Hotel Balbianello',
+    location: 'Bangladesh',
+    description: 'This venue combines rich heritage with modern luxury, offering unique event experiences in a serene setting...',
+  },
+  {
+    name: 'Lake Balbianello',
+    location: 'Dhaka',
+    description: 'Nestled near the riverbanks, this picturesque venue offers sweeping views and romantic vibes...',
+  },
+  {
+    name: 'five-star Balbianello',
+    location: 'narayanganj',
+    description: 'Nestled near the riverbanks, this picturesque venue offers sweeping views and romantic vibes Nested near the riverbanks, this picturesque venue offers sweeping views and romantic vibes...',
+  },
 ];
 
-const CustomPrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute left-4 bottom-4 z-10 text-[#90998a] hover:text-black"
-  >
-    <ArrowLeft size={20} />
-  </button>
-);
-
-const CustomNextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute right-4 bottom-4 z-10 text-[#90998a] hover:text-black"
-  >
-    <ArrowRight size={20} />
-  </button>
-);
-
 const VenueSlider = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % venues.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + venues.length) % venues.length);
   };
 
   return (
-    <div className="py-16 md:px-52 md:py-10 px-4">
-      <div>
-        <h2 className="text-start text-[#90998a] text-xl font-semibold leading-7">
-          Featured venues
-        </h2>
-      </div>
+    <div className="py-16 px-4 md:px-24 bg-white">
+      <h2 className="text-[#90998a] text-xl font-semibold mb-8">Featured venues</h2>
 
-      <div className="slider grid grid-cols-1 md:grid-cols-2 pt-10">
-        <div className="img">
-          <img src={img} alt="Venue" className="rounded-2xl shadow-md" />
-        </div>
+      <div className="bg-[#f9f9f7] rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2">
+        {/* Left Side: Image */}
+        <img src={img} alt="img" className='w-full h-[467px] rounded-tl-lg rounded-bl-lg' />
 
-        <div className="slider-section bg-[#f5f6f0] px-4 py-10 rounded-2xl relative">
-          <Slider {...settings}>
-            {venues.map((venue) => (
-              <div
-                key={venue.id}
-                className="bg-white p-10 shadow-md rounded-2xl h-full"
-              >
-                <p className="text-[#90998a] text-sm font-semibold">
-                  {venue.id} / {venues.length}
-                </p>
-                <h2 className="text-[#50594d] text-3xl font-bold mt-2">
-                  {venue.name}
-                </h2>
-                <p className="text-[#90998a] text-sm mt-1">{venue.location}</p>
-                <p className="text-gray-500 text-base mt-4 leading-relaxed">
-                  {venue.description}
-                  <span className="text-[#50594d] font-semibold ml-1 cursor-pointer">
-                    View more
-                  </span>
-                </p>
-              </div>
-            ))}
-          </Slider>
+        {/* Right Side: Content */}
+        <div className="relative p-8 md:p-12 space-y-6 flex flex-col justify-between">
+          <div>
+            <p className="text-sm text-[#90998a] font-semibold">
+              {current + 1} / {venues.length}
+            </p>
+            <h3 className="text-3xl font-serif font-bold text-[#50594d] mt-2">
+              {venues[current].name}
+            </h3>
+            <p className="text-[#90998a] text-sm mt-1">
+              {venues[current].location}
+            </p>
+            <p className="text-gray-600 text-base mt-4 whitespace-pre-line leading-relaxed">
+              {venues[current].description.split(' ').slice(0, 40).join(' ')}...{' '}
+              <button className="text-[#50594d] cursor-pointer font-semibold underline hover:text-black transition">
+                View more
+              </button>
+            </p>
+          </div>
+
+          {/* Arrows */}
+          <div className="flex items-center justify-between pt-4">
+            <button
+              onClick={prevSlide}
+              className="text-[#90998a] text-xl hover:text-[#50594d] transition"
+              aria-label="Previous"
+            >
+              <AiOutlineLeft />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="text-[#90998a] text-xl hover:text-[#50594d] transition"
+              aria-label="Next"
+            >
+              <AiOutlineRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>
