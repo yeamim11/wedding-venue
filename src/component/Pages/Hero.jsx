@@ -9,12 +9,12 @@ const Hero = () => {
                 style={{ backgroundImage: `url(${banner})`,backgroundSize:'cover',backgroundRepeat:'no-repeat' }}>  
                 <div className="absolute inset-0 bg-black/30"></div> {/* Optional overlay */}
 
-                <div className=" text-white text-center md:w-[820px] md:mt-28 mt-28 px-6">
+                <div data-aos="fade-up" className=" text-white text-center md:w-[820px] md:mt-28 mt-28 px-6">
                     <p className="text-[#464d43] text-2xl md:text-[56px] font-normal leading-[30px] md:leading-[64px]">Descover Your Perfrct US Wedding Venue
                     </p>
                     <p className=" text-[#333532] text-base font-normal leading-normal md:px-10">Sagittis adipiscing posuere id adipiscing aliquam posuere. Aliquet faucibus duis accumsan aliquet tempor diam dignissim suscipit. Nibh urna ut diam fames.</p>
                 </div>
-                <button>
+                <button  data-aos="fade-up" >
                     <IoIosArrowRoundDown className="text-[#464d43] text-4xl" />
                     <p className='text-[#333532] text-base font-normal'>Scroll</p>
                 </button>

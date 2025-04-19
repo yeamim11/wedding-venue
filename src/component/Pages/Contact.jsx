@@ -31,7 +31,7 @@ const Contact = () => {
 
 
   return (
-    <div className='md:px-52 p-4'>
+    <div  data-aos="zoom-out-up" className='md:px-52 p-4'>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-40 gap-10">
         <div className="form-container">
           <h2 className="text-2xl font-semibold mb-2">Contact us</h2>

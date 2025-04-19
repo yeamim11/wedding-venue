@@ -20,7 +20,9 @@ const Services = () => {
     ];
 
     return (
-        <div className='bg-[#f8f9f7] rounded-lg py-16 px-4 md:px-20 flex flex-col  items-center'>
+        <div  data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className='bg-[#f8f9f7] rounded-lg py-16 px-4 md:px-20 flex flex-col  items-center'>
             <div className="relative w-full max-w-5xl bg-white rounded-xl shadow-xl p-12 flex flex-col md:flex-row md:items-start">
                 <div className="md:w-1/3 text-left md:pr-8">
                     <h2 className='text-[#56614f] text-4xl font-bold'>Services</h2>

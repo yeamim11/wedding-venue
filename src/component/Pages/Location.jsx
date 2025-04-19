@@ -99,15 +99,15 @@ const Location = () => {
 
     return (
         <div className='md:px-52 md:py-20 p-4'>
-            <div className="text-center mb-6">
+            <div  data-aos="fade-up" className="text-center mb-6">
                 <h2 className='text-[#56614f] text-[32px] font-bold leading-10'>Location</h2>
                 <p className='text-[#b7c1b2] text-base'>that you will remember forever</p>
             </div>
 
             {/* ============== Location Grid ================= */}
-            <div className='container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 cursor-pointer'>
+            <div  data-aos="fade-up" className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 cursor-pointer'>
                 {locations.map((location, index) => (
-                    <div key={index} className="relative h-40 transform transition-transform duration-300 hover:scale-105">
+                    <div data-aos="flip-left" key={index} className="relative h-40 transform transition-transform duration-300 hover:scale-105">
                         <img src={location.image} alt={location.title} className='w-full h-full object-cover rounded-lg shadow-md' />
                         <div className="absolute inset-x-0 bottom-4 text-start left-4">
                             <p className='text-white font-semibold'>{location.title}</p>

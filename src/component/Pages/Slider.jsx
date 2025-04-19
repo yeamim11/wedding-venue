@@ -44,7 +44,8 @@ const VenueSlider = () => {
   };
 
   return (
-    <div className="py-16 px-4 md:px-24 bg-white">
+    <div data-aos="fade-up"
+    data-aos-duration="3000" className="py-16 px-4 md:px-24 bg-white">
       <h2 className="text-[#90998a] text-xl font-semibold mb-8">Featured venues</h2>
 
       <div className="bg-[#f9f9f7] rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2">
