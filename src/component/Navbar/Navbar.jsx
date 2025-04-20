@@ -8,7 +8,7 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="z-10 flex justify-between items-center px-6 md:px-16 py-6 fixed w-full md:bg-[#576250]/30  bg-[#576250]/30 ">
+        <nav className="z-10 flex justify-between items-center px-6 md:px-16 py-6 fixed w-full md:bg-[#576250]/30  bg-[#576250]/30  ">
             {/* Logo */}
             <div>
                 <a href="#">
@@ -58,3 +58,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
