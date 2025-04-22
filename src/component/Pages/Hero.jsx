@@ -14,7 +14,7 @@ const Hero = () => {
                     </p>
                     <p className=" text-[#333532] text-base font-normal leading-normal md:px-10">Sagittis adipiscing posuere id adipiscing aliquam posuere. Aliquet faucibus duis accumsan aliquet tempor diam dignissim suscipit. Nibh urna ut diam fames.</p>
                 </div>
-                <button  data-aos="fade-up" >
+                <button  data-aos="fade-up" className='cursor-pointer' >
                     <IoIosArrowRoundDown className="text-[#464d43] text-4xl" />
                     <p className='text-[#333532] text-base font-normal'>Scroll</p>
                 </button>
